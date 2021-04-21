@@ -16,8 +16,24 @@ class _StartScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: ScreenBackgroundcolor,
       appBar:kAppbar,
+      body: SafeArea(
+        child: Column(
+          children: [
+            Row(
+              children: [
 
-      bottomNavigationBar:Padding(
+              ],
+            )
+          ],
+        ),
+      ),
+      bottomNavigationBar:BottomBar(),
+    );
+  }
+
+  SafeArea BottomBar() {
+    return SafeArea(
+      child: Padding(
         padding: EdgeInsets.all(20.0),
         child: GNav(
             rippleColor: Colors.grey[300],
