@@ -6,6 +6,7 @@ var HeadingFontStyle = GoogleFonts.workSans(
   fontSize: 40,
   fontWeight:FontWeight.w400,
 );
+var secColor = Color(0xFF444540);
 var kAppbar = AppBar(
   title: Center(
     child: Text(
