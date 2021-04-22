@@ -63,7 +63,7 @@ class _StartScreenState extends State<HomeScreen> {
               ),
             ),
             Container(
-              height: 300,
+              height: 350,
               child: ListView.builder(
                 physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
@@ -71,7 +71,7 @@ class _StartScreenState extends State<HomeScreen> {
                 itemBuilder: (context, index) {
                   return Container(
                     margin: EdgeInsets.all(20),
-                    width: 150,
+                    width: 200,
                     decoration: BoxDecoration(
                       color: secColor,
                       borderRadius: BorderRadius.circular(25)
@@ -81,8 +81,8 @@ class _StartScreenState extends State<HomeScreen> {
                       children: [
                         Container(
                             child: Image.asset('assets/images/${Vaccines[index][3]}',),
-                            width: 250,
-                            height: 150,
+                            width: 300,
+                            height: 200,
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -141,7 +141,7 @@ class _StartScreenState extends State<HomeScreen> {
   SafeArea BottomBar() {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(18.0),
         child: GNav(
             rippleColor: Colors.grey[300],
             hoverColor: Colors.grey[100],
