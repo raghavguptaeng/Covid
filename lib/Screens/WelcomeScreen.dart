@@ -14,7 +14,7 @@ class _StartScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   List Categories = ['Vaccine', 'Sanitizer', 'Mask', 'Gloves', 'Medicines'];
   List actCategories = [true,false,false,false,false];
-  List Vaccines = [['Remidesivir','Cipla','10','remi.png']];
+  List Vaccines = [['Remidesivir','Cipla','10','remi.png'],['Dexamethasone','Phoenix','5','dex.png'],['Bamlanivimab','Lilly','12','bal.png']];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

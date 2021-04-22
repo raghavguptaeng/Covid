@@ -51,6 +51,8 @@ flutter:
   assets:
     - assets/images/remi.png
     - assets/images/headache.png
+    - assets/images/dex.png
+    - assets/images/bal.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
