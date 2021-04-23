@@ -1,3 +1,4 @@
+import 'package:covid/Screens/vaccine_Screen.dart';
 import 'package:covid/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -54,8 +55,15 @@ class _StartScreenState extends State<HomeScreen> {
               width: 200,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                  color: Color(0xFF465465),
-                borderRadius: BorderRadius.circular(25)
+                  borderRadius: BorderRadius.circular(25),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color(0xFF465465),
+                      secColor,
+                    ],
+                  )
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -124,6 +132,9 @@ class _StartScreenState extends State<HomeScreen> {
                         style: TextStyle(fontSize: 30, color: ImpColor),
                       ),
                       GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(context, VaccineScreen.VScreen);
+                        },
                         child: Container(
                           width: 30,
                           height: 30,

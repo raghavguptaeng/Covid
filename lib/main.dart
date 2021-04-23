@@ -1,4 +1,5 @@
 import 'package:covid/Screens/WelcomeScreen.dart';
+import 'package:covid/Screens/vaccine_Screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,8 @@ class initApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: HomeScreen.homeScreen,
       routes:{
-        HomeScreen.homeScreen:(context)=>HomeScreen()
+        HomeScreen.homeScreen:(context)=>HomeScreen(),
+        VaccineScreen.VScreen:(context)=>VaccineScreen()
       },
     );
   }
