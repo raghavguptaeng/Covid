@@ -25,39 +25,56 @@ class _StartScreenState extends State<HomeScreen> {
           children: [
             kCategories(),
             Expanded(
-                child: ListView(
-              children: [
-                kVaccine(),
-                // Container(
-                //   child: Padding(
-                //     padding: const EdgeInsets.only(left: 20, right: 15),
-                //     child: Column(
-                //       crossAxisAlignment: CrossAxisAlignment.start,
-                //       children: [
-                //         Text(
-                //           "Sanitization",
-                //           style: headTextStyle,
-                //         ),
-                //         Expanded(
-                //           child: ListView.builder(
-                //               itemCount: 1,
-                //               scrollDirection: Axis.horizontal,
-                //               itemBuilder: (context,index){
-                //                return Container(
-                //                   child: Text('kj'),
-                //                 );
-                //           }),
-                //         )
-                //       ],
-                //     ),
-                //   ),
-                // )
-              ],
+                child: ListView(children: [
+                  kVaccine(),
+                  Padding(
+                    padding: const EdgeInsets.only(left:20.0),
+                    child: Text('Sanitization',style: headTextStyle,),
+                  ),
+                  Sanitization(),
+                ],
             ))
           ],
         ),
       ),
       bottomNavigationBar: BottomBar(),
+    );
+  }
+
+  Container Sanitization() {
+    return Container(
+      height: 300,
+      child: ListView.builder(
+        physics: BouncingScrollPhysics(),
+        scrollDirection: Axis.horizontal,
+        itemCount: kSanitization.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            child: Container(
+              width: 200,
+              margin: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                  color: Color(0xFF465465),
+                borderRadius: BorderRadius.circular(25)
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(kSanitization[index][0],style: headTextStyle,),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      'assets/images/${kSanitization[index][1]}',
+                      width: 150,
+                      height: 150,
+                    ),
+                  ),
+                ],
+              )
+            ),
+          );
+        },
+      ),
     );
   }
 
@@ -172,7 +189,7 @@ class _StartScreenState extends State<HomeScreen> {
   SafeArea BottomBar() {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.all(18.0),
+        padding: const EdgeInsets.all(8.0),
         child: GNav(
             rippleColor: Colors.grey[300],
             hoverColor: Colors.grey[100],

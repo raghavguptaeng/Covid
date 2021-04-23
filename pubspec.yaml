@@ -53,6 +53,10 @@ flutter:
     - assets/images/headache.png
     - assets/images/dex.png
     - assets/images/bal.png
+    - assets/images/face-mask.png
+    - assets/images/face-shield.png
+    - assets/images/hand-sanitizer.png
+    - assets/images/glove.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

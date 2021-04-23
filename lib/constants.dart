@@ -6,6 +6,7 @@ var HeadingFontStyle = GoogleFonts.workSans(
   fontSize: 40,
   fontWeight:FontWeight.w400,
 );
+List kSanitization = [['Mask','face-mask.png'],['Gloves','glove.png'],['Face Shield','face-shield.png'],['Sanitizer','hand-sanitizer.png']];
 List Vaccines = [['Remidesivir','Cipla','10','remi.png'],['Dexamethasone','Phoenix','5','dex.png'],['Bamlanivimab','Lilly','12','bal.png']];
 var secColor = Color(0xFF444540);
 var kAppbar = AppBar(
