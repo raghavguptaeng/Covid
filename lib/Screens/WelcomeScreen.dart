@@ -13,8 +13,8 @@ class HomeScreen extends StatefulWidget {
 class _StartScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   List Categories = ['Vaccine', 'Sanitizer', 'Mask', 'Gloves', 'Medicines'];
-  List actCategories = [true,false,false,false,false];
-  List Vaccines = [['Remidesivir','Cipla','10','remi.png'],['Dexamethasone','Phoenix','5','dex.png'],['Bamlanivimab','Lilly','12','bal.png']];
+  List actCategories = [true, false, false, false, false];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +24,36 @@ class _StartScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             kCategories(),
-            kVaccine()
+            Expanded(
+                child: ListView(
+              children: [
+                kVaccine(),
+                // Container(
+                //   child: Padding(
+                //     padding: const EdgeInsets.only(left: 20, right: 15),
+                //     child: Column(
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: [
+                //         Text(
+                //           "Sanitization",
+                //           style: headTextStyle,
+                //         ),
+                //         Expanded(
+                //           child: ListView.builder(
+                //               itemCount: 1,
+                //               scrollDirection: Axis.horizontal,
+                //               itemBuilder: (context,index){
+                //                return Container(
+                //                   child: Text('kj'),
+                //                 );
+                //           }),
+                //         )
+                //       ],
+                //     ),
+                //   ),
+                // )
+              ],
+            ))
           ],
         ),
       ),
@@ -34,116 +63,110 @@ class _StartScreenState extends State<HomeScreen> {
 
   Container kVaccine() {
     return Container(
-            height: 350,
-            child: ListView.builder(
-              physics: BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemCount: Vaccines.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.all(20),
-                  width: 200,
-                  decoration: BoxDecoration(
-                    color: secColor,
-                    borderRadius: BorderRadius.circular(25)
+      height: 350,
+      child: ListView.builder(
+        physics: BouncingScrollPhysics(),
+        scrollDirection: Axis.horizontal,
+        itemCount: Vaccines.length,
+        itemBuilder: (context, index) {
+          return Container(
+            margin: EdgeInsets.all(20),
+            width: 200,
+            decoration: BoxDecoration(
+                color: secColor, borderRadius: BorderRadius.circular(25)),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  child: Image.asset(
+                    'assets/images/${Vaccines[index][3]}',
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  width: 300,
+                  height: 200,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      Vaccines[index][0],
+                      style: headTextStyle,
+                    ),
+                    Text(
+                      'By ' + Vaccines[index][1],
+                      style: TextStyle(color: Colors.grey, fontSize: 15),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
                     children: [
-                      Container(
-                          child: Image.asset('assets/images/${Vaccines[index][3]}',),
-                          width: 300,
-                          height: 200,
+                      Text(
+                        Vaccines[index][2] + '\$',
+                        style: TextStyle(fontSize: 30, color: ImpColor),
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(Vaccines[index][0],style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold
-                          ),),
-                          Text('By '+Vaccines[index][1],
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 15
-                            ),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-
-                          children: [
-                            Text(Vaccines[index][2]+'\$',style: TextStyle(
-                              fontSize: 30,
-                              color: ImpColor
-                            ),),
-                            GestureDetector(
-                              child: Container(
-                                  width: 30,
-                                  height: 30,
-                                  child: Icon(Icons.shopping_bag_outlined),
-                                  decoration: BoxDecoration(
-                                    color: ImpColor,
-                                    borderRadius: BorderRadius.circular(10)
-                                  ),
-                              ),
-                            )
-                          ],
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      GestureDetector(
+                        child: Container(
+                          width: 30,
+                          height: 30,
+                          child: Icon(Icons.shopping_bag_outlined),
+                          decoration: BoxDecoration(
+                              color: ImpColor,
+                              borderRadius: BorderRadius.circular(10)),
                         ),
                       )
                     ],
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   ),
-                );
-              },
+                )
+              ],
             ),
           );
+        },
+      ),
+    );
   }
 
   Container kCategories() {
     return Container(
-            height: 55,
-            child: ListView.builder(
-              physics: BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemCount: 4,
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: (){
-                    for(int i=0  ;i<actCategories.length ; ++i){
-                      actCategories[i] = false;
-                    }
-                    setState(() {
-                      actCategories[index] = true;
-                    });
-                  },
-                  child: Container(
-                    width: 90,
-                    padding: EdgeInsets.all(10),
-                    margin: EdgeInsets.all(10),
-                    child: Center(
-                      child: Text(
-                        Categories[index],
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: (actCategories[index])?Colors.black:ImpColor
-                        ),
-                      ),
-                    ),
-                    decoration: BoxDecoration(
-                      color: (actCategories[index])?Colors.white:Color(0xFF4B4E55),
-                      borderRadius: BorderRadius.circular(10)
-                    ),
-                  ),
-                );
-              },
+      height: 55,
+      child: ListView.builder(
+        physics: BouncingScrollPhysics(),
+        scrollDirection: Axis.horizontal,
+        itemCount: 4,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              for (int i = 0; i < actCategories.length; ++i) {
+                actCategories[i] = false;
+              }
+              setState(() {
+                actCategories[index] = true;
+              });
+            },
+            child: Container(
+              width: 90,
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
+              child: Center(
+                child: Text(
+                  Categories[index],
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: (actCategories[index]) ? Colors.black : ImpColor),
+                ),
+              ),
+              decoration: BoxDecoration(
+                  color:
+                      (actCategories[index]) ? Colors.white : Color(0xFF4B4E55),
+                  borderRadius: BorderRadius.circular(10)),
             ),
           );
+        },
+      ),
+    );
   }
 
   SafeArea BottomBar() {
