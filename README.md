@@ -1,4 +1,4 @@
-https://img.shields.io/github/issues/raghavguptaeng/Covid
+<a href="https://github.com/raghavguptaeng/Covid/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/raghavguptaeng/Covid"></a>
 
 # Covid
 This is an application intendent to use as an online medical portal for COVID-19 relavent resources 
