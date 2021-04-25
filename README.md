@@ -1,3 +1,5 @@
+https://img.shields.io/github/issues/raghavguptaeng/Covid
+
 # Covid
 This is an application intendent to use as an online medical portal for COVID-19 relavent resources 
 such as remidesivir.
