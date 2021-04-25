@@ -1,3 +1,4 @@
+import 'package:covid/Screens/vArguments.dart';
 import 'package:covid/Screens/vaccine_Screen.dart';
 import 'package:covid/constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -104,8 +105,11 @@ class _StartScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
-                  child: Image.asset(
-                    'assets/images/${Vaccines[index][3]}',
+                  child: Hero(
+                    tag: Vaccines[index][0],
+                    child: Image.asset(
+                      'assets/images/${Vaccines[index][3]}',
+                    ),
                   ),
                   width: 300,
                   height: 200,
@@ -134,7 +138,14 @@ class _StartScreenState extends State<HomeScreen> {
                       ),
                       GestureDetector(
                         onTap: (){
-                          Navigator.pushNamed(context, VaccineScreen.VScreen);
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder:(context)=>VaccineScreen(
+                              Image:Vaccines[index][3],
+                              Name: Vaccines[index][0],
+                              Manifacture: Vaccines[index][1],
+                              Price: Vaccines[index][2],
+                              About: Vaccines[index][5]
+                          ),),);
                         },
                         child: Container(
                           width: 30,

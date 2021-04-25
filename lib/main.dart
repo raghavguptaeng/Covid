@@ -1,4 +1,4 @@
-import 'package:covid/Screens/WelcomeScreen.dart';
+import 'package:covid/Screens/mainScreen.dart';
 import 'package:covid/Screens/vaccine_Screen.dart';
 import 'package:flutter/material.dart';
 
