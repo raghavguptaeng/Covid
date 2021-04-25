@@ -3,4 +3,7 @@ This is an application intendent to use as an online medical portal for COVID-19
 such as remidesivir.
 App has an online minishop and Contact to Doctor Feature
 # UI
-![UI](https://github.com/raghavguptaeng/Covid/blob/master/assets/images/UI.png?raw=true)
+![UI](https://github.com/raghavguptaeng/Covid/blob/master/assets/images/UI2.png?raw=true)
+![UI](https://github.com/raghavguptaeng/Covid/blob/master/assets/images/UI1.png?raw=true)
+![UI](https://github.com/raghavguptaeng/Covid/blob/master/assets/images/UI3.png?raw=true)
+![UI](https://github.com/raghavguptaeng/Covid/blob/master/assets/images/UI4.png?raw=true)
