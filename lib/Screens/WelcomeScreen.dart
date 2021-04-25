@@ -4,7 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-
+import '../VaccineData.dart';
+import 'vaccine_Screen.dart';
 class HomeScreen extends StatefulWidget {
   static String homeScreen = '/welcome';
   @override
@@ -119,7 +120,7 @@ class _StartScreenState extends State<HomeScreen> {
                     ),
                     Text(
                       'By ' + Vaccines[index][1],
-                      style: TextStyle(color: Colors.grey, fontSize: 15),
+                      style: subTextStyle,
                     ),
                   ],
                 ),
@@ -129,7 +130,7 @@ class _StartScreenState extends State<HomeScreen> {
                     children: [
                       Text(
                         Vaccines[index][2] + '\$',
-                        style: TextStyle(fontSize: 30, color: ImpColor),
+                        style: priceTextStyle,
                       ),
                       GestureDetector(
                         onTap: (){

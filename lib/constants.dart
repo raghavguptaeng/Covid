@@ -7,7 +7,6 @@ var HeadingFontStyle = GoogleFonts.workSans(
   fontWeight:FontWeight.w400,
 );
 List kSanitization = [['Mask','face-mask.png'],['Gloves','glove.png'],['Face Shield','face-shield.png'],['Sanitizer','hand-sanitizer.png']];
-List Vaccines = [['Remidesivir','Cipla','10','remi.png'],['Dexamethasone','Phoenix','5','dex.png'],['Bamlanivimab','Lilly','12','bal.png']];
 var secColor = Color(0xFF444540);
 var kAppbar = AppBar(
   title: Center(
@@ -23,4 +22,10 @@ var headTextStyle = TextStyle(
     color: Colors.white,
     fontSize: 20,
     fontWeight: FontWeight.bold
+);
+var subTextStyle = TextStyle(color: Colors.grey, fontSize: 15);
+var priceTextStyle = TextStyle(fontSize: 30, color: ImpColor);
+var quantityButtonStyle = BoxDecoration(
+    color: Color(0xff535356),
+    borderRadius: BorderRadius.circular(15)
 );
