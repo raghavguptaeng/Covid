@@ -1,4 +1,3 @@
-import 'package:covid/Screens/vArguments.dart';
 import 'package:covid/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
